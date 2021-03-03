@@ -5,7 +5,7 @@ FROM maven:3.6-amazoncorretto-8
 
 WORKDIR /tmp/
 ADD pom.xml /tmp
-RUN curl -o ./spark-2.4.3-bin-without-hadoop.tgz https://archive.apache.org/dist/spark/spark-2.4.3/spark-2.4.3-bin-without-hadoop.tgz
+RUN curl -k -o ./spark-2.4.3-bin-without-hadoop.tgz https://archive.apache.org/dist/spark/spark-2.4.3/spark-2.4.3-bin-without-hadoop.tgz
 RUN tar -xzf spark-2.4.3-bin-without-hadoop.tgz && \
     mv spark-2.4.3-bin-without-hadoop /opt/spark && \
     rm spark-2.4.3-bin-without-hadoop.tgz
